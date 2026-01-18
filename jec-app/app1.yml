@@ -28,7 +28,7 @@ spec:
       - name: nginx-config
         image: httpd
         ports:
-        - containerPort: 8080
+        - containerPort: 8082
 ---    
 apiVersion: v1
 kind: Service
