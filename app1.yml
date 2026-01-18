@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resume-deployment
+  labels:
+    app: resume
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: resume
+  template:
+    metadata:
+      labels:
+        app: resume
+    spec:
+      nodeSelector:
+        nodepool: resume
+      containers:
+      - name: nginx
+        image: kayitesimarieange3h/resume-update:10
+        ports:
+        - containerPort: 5001
